@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SorochanLab3Var19.MainPage">
+
+    <ScrollView>
+        <StackLayout RadioButtonGroup.GroupName="accUnits" Padding="20">
+
+            <Label x:Name="studentInfoLabel"
+                   FontSize="18"
+                   Margin="0,0,0,20"
+                   TextColor="#FF26E5FF"/>
+
+            <Label x:Name="header"
+                   Text="Оберіть одиниці прискорення"
+                   FontSize="20"
+                   Margin="0,10,0,20" />
+
+            <RadioButton Content="м/с²" 
+                         Value="MetersPerSecondSquared"
+                         CheckedChanged="OnAccelerationUnitChanged" />
+
+            <RadioButton Content="g (земне прискорення)" 
+                         Value="G_Force"
+                         CheckedChanged="OnAccelerationUnitChanged" />
+
+            <RadioButton Content="ft/s²" 
+                         Value="FeetPerSecondSquared"
+                         CheckedChanged="OnAccelerationUnitChanged" />
+
+            <RadioButton Content="км/год²" 
+                         Value="KilometersPerHourSquared"
+                         CheckedChanged="OnAccelerationUnitChanged" />
+
+            <RadioButton Content="милі/год²" 
+                         Value="MilesPerHourSquared"
+                         CheckedChanged="OnAccelerationUnitChanged" />
+
+            <Entry x:Name="inputValue"
+                   Placeholder="Введіть значення"
+                   Keyboard="Numeric"
+                   Margin="0,20,0,0" />
+
+            <Button Text="Конвертувати"
+                    Clicked="OnConvertClicked"
+                    Margin="0,15,0,0" />
+
+            <Label x:Name="resultLabel"
+                   Text="Результат: "
+                   FontSize="18"
+                   Margin="0,25,0,0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
